@@ -1,0 +1,636 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Overview | LumiKids Academy</title>
+  <meta name="description" content="Dashboard Overview for LumiKids Academy. Real-time attendance, monthly learning hours, curriculum mix, student schedules, and fee management.">
+  <link rel="icon" type="image/png" href="logo-light.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('lumikids-theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        const savedDir = localStorage.getItem('lumikids-direction') || 'ltr';
+        document.documentElement.setAttribute('dir', savedDir);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    const lumiYellowScale = {
+      DEFAULT: '#FFB547',
+      50: '#FFF9ED',
+      100: '#FFF0D4',
+      200: '#FFE2AA',
+      300: '#FFD380',
+      400: '#FFC456',
+      500: '#FFB547',
+      600: '#FFA21F',
+      700: '#E58700',
+      800: '#B86800',
+      900: '#8A4B00',
+      950: '#3D2200'
+    };
+    const lumiMintScale = {
+      DEFAULT: '#4CBF9F',
+      50: '#ECFAF6',
+      100: '#D7F5EC',
+      200: '#AFEBD9',
+      300: '#86E0C5',
+      400: '#5ED5B2',
+      500: '#4CBF9F',
+      600: '#3AA788',
+      700: '#2C8E72',
+      800: '#1F755B',
+      900: '#145A45',
+      950: '#0E3128'
+    };
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: lumiYellowScale,
+            secondary: lumiMintScale,
+            lumiYellow: lumiYellowScale,
+            lumiMint: lumiMintScale,
+            amber: lumiYellowScale,
+            emerald: lumiMintScale
+          },
+          screens: {
+            'mobile': {'max': '639px'},
+            'tablet': {'min': '640px', 'max': '1023px'},
+            'desktop': {'min': '1024px', 'max': '1279px'},
+            'large': {'min': '1280px'},
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px'
+          },
+          fontFamily: {
+            heading: ['"Baloo 2"', 'cursive', 'sans-serif'],
+            body: ['"Nunito"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+
+  <style>    .dash-sidebar-link.active {
+      background: rgba(255, 181, 71, 0.16);
+      color: #B86800;
+      font-weight: 800;
+      border-left: 3px solid #FFB547;
+    }
+    html.dark .dash-sidebar-link.active {
+      background: rgba(255, 181, 71, 0.22);
+      color: #FFB547;
+      border-left: 3px solid #FFB547;
+    }
+    .dash-sidebar-link.active svg {
+      color: #FFB547 !important;
+    }
+    .dash-sidebar-link:hover {
+      background: rgba(255, 181, 71, 0.08);
+      color: #B86800;
+    }
+    html.dark .dash-sidebar-link:hover {
+      background: rgba(255, 181, 71, 0.12);
+      color: #FFB547;
+    }
+    .chart-bar-group:hover .chart-bar {
+      filter: brightness(1.1);
+      transform: scaleY(1.02);
+      transform-origin: bottom;
+    }
+    .chart-bar {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex antialiased bg-[#F4F7FB] dark:bg-slate-950 font-body text-slate-800 dark:text-slate-200">
+  <aside id="dashboardSidebar" class="w-72 min-w-[18rem] h-screen sticky top-0 bg-white dark:bg-slate-900 border-r border-slate-200/90 dark:border-slate-800 flex flex-col justify-between z-30 transition-all duration-300">
+    <div>
+      <div class="px-5 py-4 border-b border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none" title="Back to LumiKids Academy Home">
+          <div class="relative h-13 w-auto flex items-center transition-transform duration-300 group-hover:scale-105 shrink-0">
+            <img src="logo-light.png" alt="LumiKids Academy Logo" class="site-logo-light h-12 w-auto object-contain drop-shadow-sm">
+            <img src="logo-dark.png" alt="LumiKids Academy Logo" class="site-logo-dark h-12 w-auto object-contain drop-shadow-md">
+          </div>
+          <div class="flex flex-col text-left rtl:text-right">
+            <div class="flex items-center gap-1.5">
+              <span class="text-xl font-black font-heading text-lumiYellow-600 dark:text-lumiYellow leading-none tracking-tight">
+                Lumi<span class="text-lumiMint-600 dark:text-lumiMint">Kids</span>
+              </span>
+            </div>
+            <span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 tracking-wider whitespace-nowrap mt-0.5">
+              Little Minds, Big Dreams!
+            </span>
+          </div>
+        </a>
+      </div>
+      <nav class="px-3.5 py-4 space-y-1">
+        <a href="#overview" onclick="switchView('overview'); return false;" id="nav-overview" class="dash-sidebar-link active flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all">
+          <svg class="w-4 h-4 shrink-0 text-amber-500 dark:text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect></svg>
+          <span>Dashboard Overview</span>
+        </a>
+        <a href="#attendance" onclick="switchView('attendance'); return false;" id="nav-attendance" class="dash-sidebar-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span>Attendance Tracker</span>
+        </a>
+        <a href="#progress" onclick="switchView('progress'); return false;" id="nav-progress" class="dash-sidebar-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+          <span>Progress Reports</span>
+        </a>
+        <a href="#calendar" onclick="switchView('calendar'); return false;" id="nav-calendar" class="dash-sidebar-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>School Calendar</span>
+        </a>
+        <a href="#fees" onclick="switchView('fees'); return false;" id="nav-fees" class="dash-sidebar-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+          <span>Fee Status &amp; Ledger</span>
+        </a>
+        <a href="#meals" onclick="switchView('meals'); return false;" id="nav-meals" class="dash-sidebar-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Daily Meals &amp; Nutrition</span>
+        </a>
+        <a href="#messages" onclick="switchView('messages'); return false;" id="nav-messages" class="dash-sidebar-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <span>Educator Messages</span>
+        </a>
+      </nav>
+    </div>
+    <div class="p-3.5 border-t border-slate-100 dark:border-slate-800/80 space-y-1">
+      <a href="index.html" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        <span>View website</span>
+      </a>
+
+      <a href="login.html" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition-all">
+        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        <span>Log out</span>
+      </a>
+    </div>
+
+  </aside>
+  <main class="flex-1 min-w-0 flex flex-col min-h-screen overflow-y-auto">
+    <header class="sticky top-0 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 px-6 sm:px-8 py-4">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-slate-950 dark:text-white leading-tight">
+            Dashboard Overview
+          </h1>
+          <p id="dashChildSubtitle" class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-0.5">
+            Tracking Attendance, Progress Reports, School Calendar &amp; Fee Status
+          </p>
+        </div>
+        <div class="flex items-center gap-3 sm:gap-3.5">
+          <div class="relative hidden md:block w-48 lg:w-64">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input
+              type="text"
+              placeholder="Search attendance, skills, events, fees..."
+              class="w-full pl-9 pr-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-50 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700/80 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-amber-400 shadow-sm transition"
+            >
+          </div>
+          
+          <button 
+            onclick="toggleDirection()" 
+            class="dir-toggle-btn flex items-center justify-center focus:outline-none" 
+            title="Toggle text direction (LTR / RTL)" 
+            aria-label="Toggle text direction"
+          >
+            <svg class="w-4 h-4 text-slate-700 dark:text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="21" y1="8" x2="3" y2="8"></line>
+              <polyline points="17 4 21 8 17 12"></polyline>
+              <line x1="3" y1="16" x2="21" y2="16"></line>
+              <polyline points="7 12 3 16 7 20"></polyline>
+            </svg>
+          </button>
+
+          
+          <button 
+            onclick="toggleTheme()" 
+            class="theme-toggle-btn flex items-center justify-center focus:outline-none"
+            title="Toggle Light / Dark Mode"
+            aria-label="Toggle Theme"
+          >
+            <span class="theme-toggle-icon flex items-center justify-center">
+              <svg class="w-4.5 h-4.5 text-slate-700 dark:text-slate-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+              </svg>
+            </span>
+          </button>
+          <button
+            onclick="switchView('calendar')"
+            class="relative w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:border-amber-400 shadow-sm transition shrink-0"
+            title="School Alerts &amp; Notices"
+            aria-label="View notifications"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 text-white text-[9px] font-black flex items-center justify-center shadow-sm">
+              2
+            </span>
+          </button>
+          <div class="relative shrink-0" id="profileDropdownWrapper">
+            <button
+              id="topProfileBtn"
+              onclick="toggleProfileDropdown(event)"
+              class="h-9 flex items-center gap-1.5 sm:gap-2 pl-1 pr-2.5 sm:pr-3 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm transition-all focus:outline-none cursor-pointer whitespace-nowrap"
+              title="Open Parent Profile"
+              aria-expanded="false"
+            >
+              <div class="relative w-7 h-7 rounded-full overflow-hidden shrink-0 border border-amber-400/50">
+                <img src="test-sarah-face.jpg" alt="Sarah Jenkins" class="w-full h-full object-cover">
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-slate-800 dark:text-slate-100 whitespace-nowrap leading-none">
+                Hello, Sarah Jenkins!
+              </span>
+              <svg id="profileChevron" class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div
+              id="profileDropdownMenu"
+              class="hidden absolute right-0 rtl:right-auto rtl:left-0 mt-3 w-80 sm:w-88 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-2xl p-5 z-50 text-left rtl:text-right transition-all duration-200"
+            >
+              <div class="flex items-start justify-between gap-3 pb-3">
+                <div class="flex items-center gap-3">
+                  <div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-amber-400 shadow-md shrink-0">
+                    <img src="test-sarah-face.jpg" alt="Sarah Jenkins" class="w-full h-full object-cover">
+                    <span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900"></span>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-black font-heading text-slate-950 dark:text-white leading-tight">
+                      Sarah Jenkins
+                    </h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 truncate max-w-[160px]">
+                      sarah.jenkins@lumikids.edu
+                    </p>
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 mt-1.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-100/90 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-300/60 dark:border-amber-700/50">
+                      <svg class="w-2.5 h-2.5 text-amber-600 dark:text-amber-400 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                      <span>Diamond Club VIP</span>
+                    </span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 tracking-wider shrink-0 border border-slate-200 dark:border-slate-700">
+                  LUMI-884920
+                </span>
+              </div>
+              <div class="grid grid-cols-2 gap-3 p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 my-3.5 text-center">
+                <div class="border-r rtl:border-r-0 rtl:border-l border-slate-200 dark:border-slate-700 pr-2 rtl:pr-0 rtl:pl-2">
+                  <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Active Students</span>
+                  <span class="text-sm font-black text-slate-900 dark:text-white mt-0.5 block">2 Confirmed</span>
+                </div>
+                <div class="pl-2 rtl:pl-0 rtl:pr-2">
+                  <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Rewards Points</span>
+                  <span class="text-sm font-black text-amber-600 dark:text-amber-400 mt-0.5 block">24,850 Pts</span>
+                </div>
+              </div>
+              <div class="space-y-1.5 my-3">
+                <a href="#settings" onclick="switchView('overview'); toggleProfileDropdown(); return false;" class="flex items-center justify-between p-2 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/70 transition group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center shrink-0 group-hover:bg-amber-400 group-hover:text-slate-950 transition">
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div>
+                      <span class="block text-xs font-bold text-slate-900 dark:text-white leading-tight">Profile &amp; Settings</span>
+                      <span class="text-[10px] text-slate-400 font-medium">Manage personal details, child records &amp; seats</span>
+                    </div>
+                  </div>
+                  <svg class="w-4 h-4 text-slate-400 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 transition-transform shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+
+                <a href="#sanctuaries" onclick="switchView('progress'); toggleProfileDropdown(); return false;" class="flex items-center justify-between p-2 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/70 transition group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-rose-50 dark:bg-rose-950/40 text-rose-500 flex items-center justify-center shrink-0 group-hover:bg-rose-500 group-hover:text-white transition">
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div>
+                      <span class="block text-xs font-bold text-slate-900 dark:text-white leading-tight">Saved Sanctuaries</span>
+                      <span class="text-[10px] text-slate-400 font-medium">Wishlist destinations &amp; learning packages</span>
+                    </div>
+                  </div>
+                  <svg class="w-4 h-4 text-slate-400 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 transition-transform shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+
+                <a href="#security" onclick="switchView('fees'); toggleProfileDropdown(); return false;" class="flex items-center justify-between p-2 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/70 transition group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 group-hover:bg-amber-400 group-hover:text-slate-950 transition">
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                      <span class="block text-xs font-bold text-slate-900 dark:text-white leading-tight">Security &amp; Credentials</span>
+                      <span class="text-[10px] text-slate-400 font-medium">2FA Active &bull; Tier-1 Escrow Vault</span>
+                    </div>
+                  </div>
+                  <svg class="w-4 h-4 text-slate-400 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 transition-transform shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+
+                <button type="button" onclick="toggleTheme()" class="w-full flex items-center justify-between p-2 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/70 transition group cursor-pointer text-left rtl:text-right">
+                  <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center shrink-0 group-hover:bg-amber-400 group-hover:text-slate-950 transition">
+                      <span class="theme-toggle-icon flex items-center justify-center pointer-events-none">
+                        <svg class="w-4 h-4 text-slate-700 dark:text-slate-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                        </svg>
+                      </span>
+                    </div>
+                    <div>
+                      <span class="block text-xs font-bold text-slate-900 dark:text-white leading-tight">Display Appearance</span>
+                      <span class="text-[10px] text-slate-400 font-medium">Switch Light &amp; Dark Mode</span>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 tracking-wider shrink-0 border border-slate-200 dark:border-slate-700">Switch</span>
+                </button>
+              </div>
+              <div class="pt-3 border-t border-slate-100 dark:border-slate-800">
+                <a
+                  href="login.html"
+                  class="w-full flex items-center justify-center gap-2 py-3 rounded-2xl bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 dark:hover:bg-rose-900/40 text-rose-600 dark:text-rose-400 text-xs font-black transition-all"
+                >
+                  <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                  <span>Log Out from Parent Portal</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </header>
+    <div class="p-6 sm:p-8 space-y-6 max-w-7xl w-full mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div id="card-attendance" onclick="switchView('attendance')" class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-amber-400/50 transition-all cursor-pointer flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/15 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div>
+            <span class="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Attendance Rate</span>
+            <span id="metricAttendanceRate" class="block text-2xl font-black font-heading text-slate-950 dark:text-white leading-tight mt-0.5">96.5%</span>
+            <span id="metricAttendanceSub" class="inline-flex items-center text-[11px] font-extrabold text-emerald-600 dark:text-emerald-400 gap-0.5 mt-0.5">
+              <span>&uarr;</span> 82 of 85 Days Attended
+            </span>
+          </div>
+        </div>
+        <div id="card-progress" onclick="switchView('progress')" class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-emerald-400/50 transition-all cursor-pointer flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/15 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+          </div>
+          <div>
+            <span class="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Progress Reports</span>
+            <span id="metricProgressStanding" class="block text-2xl font-black font-heading text-slate-950 dark:text-white leading-tight mt-0.5">Distinction</span>
+            <span id="metricProgressSub" class="inline-flex items-center text-[11px] font-extrabold text-emerald-600 dark:text-emerald-400 gap-0.5 mt-0.5">
+              <span>&uarr;</span> 5 Core Skills Mastered
+            </span>
+          </div>
+        </div>
+        <div id="card-calendar" onclick="switchView('calendar')" class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-amber-400/50 transition-all cursor-pointer flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/15 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+          <div>
+            <span class="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">School Calendar</span>
+            <span id="metricCalendarEvents" class="block text-2xl font-black font-heading text-slate-950 dark:text-white leading-tight mt-0.5">3 Events</span>
+            <span class="inline-flex items-center text-[11px] font-extrabold text-amber-600 dark:text-amber-400 gap-0.5 mt-0.5">
+              <span>&bull;</span> Next: STEM Maker Fair
+            </span>
+          </div>
+        </div>
+        <div id="card-fees" onclick="switchView('fees')" class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-emerald-400/50 transition-all cursor-pointer flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/15 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+          </div>
+          <div>
+            <span class="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Tuition &amp; Fees</span>
+            <span id="metricFeeStatus" class="block text-2xl font-black font-heading text-slate-950 dark:text-white leading-tight mt-0.5">$1,450.00</span>
+            <span id="metricFeeSub" class="inline-flex items-center text-[11px] font-extrabold text-amber-600 dark:text-amber-400 gap-0.5 mt-0.5">
+              <span>&bull;</span> Due Nov 30 (Term 3)
+            </span>
+          </div>
+        </div>
+
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div id="dashboardLeftMain" class="lg:col-span-8 space-y-6">
+        </div>
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-7 shadow-sm">
+            <div class="mb-4">
+              <h2 class="text-lg font-black font-heading text-slate-950 dark:text-white leading-tight">
+                Curriculum Progress
+              </h2>
+              <p class="text-xs text-slate-400 dark:text-slate-500 font-medium mt-0.5">
+                Weekly atelier hours by learning domain
+              </p>
+            </div>
+            <div class="py-3 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-between gap-5">
+              <div class="relative w-32 h-32 shrink-0 flex items-center justify-center">
+                <svg class="w-full h-full -rotate-90 transform" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="38" stroke-width="12" stroke="#E2E8F0" class="dark:stroke-slate-800" fill="transparent"/>
+                  <circle cx="50" cy="50" r="38" stroke-width="12" stroke="#4CBF9F" stroke-dasharray="95.50 143.26" stroke-dashoffset="0" fill="transparent"/>
+                  <circle cx="50" cy="50" r="38" stroke-width="12" stroke="#FFB547" stroke-dasharray="47.75 191.01" stroke-dashoffset="-95.5" fill="transparent"/>
+                  <circle cx="50" cy="50" r="38" stroke-width="12" stroke="#1F755B" stroke-dasharray="47.75 191.01" stroke-dashoffset="-143.25" fill="transparent"/>
+                  <circle cx="50" cy="50" r="38" stroke-width="12" stroke="#FFA21F" stroke-dasharray="47.75 191.01" stroke-dashoffset="-191" fill="transparent"/>
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                  <span class="text-xl font-black font-heading text-slate-900 dark:text-white leading-none">4</span>
+                  <span class="text-[9px] font-black uppercase tracking-wider text-slate-400 mt-0.5">DOMAINS</span>
+                </div>
+              </div>
+              <div class="space-y-2 w-full text-xs">
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#4CBF9F] shrink-0"></span>
+                    <span class="font-medium text-slate-700 dark:text-slate-300">STEAM &amp; Robotics</span>
+                  </div>
+                  <span class="font-black text-slate-950 dark:text-white">40%</span>
+                </div>
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#FFB547] shrink-0"></span>
+                    <span class="font-medium text-slate-700 dark:text-slate-300">Reggio Inquiry</span>
+                  </div>
+                  <span class="font-black text-slate-950 dark:text-white">20%</span>
+                </div>
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#FFA21F] shrink-0"></span>
+                    <span class="font-medium text-slate-700 dark:text-slate-300">Phonics &amp; Reading</span>
+                  </div>
+                  <span class="font-black text-slate-950 dark:text-white">20%</span>
+                </div>
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#1F755B] shrink-0"></span>
+                    <span class="font-medium text-slate-700 dark:text-slate-300">Eco-Play &amp; Nature</span>
+                  </div>
+                  <span class="font-black text-slate-950 dark:text-white">20%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 mt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-400">
+              Curriculum balance updated weekly &bull; Term 2 active
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+            <div class="flex items-center justify-between pb-3.5 border-b border-slate-100 dark:border-slate-800">
+              <div>
+                <span class="text-[10px] font-black uppercase tracking-wider text-amber-500 block">ENROLLED STUDENT</span>
+                <h3 id="sideChildName" class="text-base font-black font-heading text-slate-900 dark:text-white mt-0.5">Leo Jenkins</h3>
+                <p id="sideChildGrade" class="text-xs text-slate-400">Grade 1 &bull; Innovators</p>
+              </div>
+              <div class="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+                <button onclick="selectChild('leo')" id="sideBtn-leo" class="px-2.5 py-1 rounded-lg text-xs font-black bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-xs transition">Leo</button>
+                <button onclick="selectChild('mia')" id="sideBtn-mia" class="px-2.5 py-1 rounded-lg text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">Mia</button>
+              </div>
+            </div>
+
+            <div class="py-4 space-y-2.5 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400 font-medium">Homeroom</span>
+                <span id="sideChildRoom" class="font-bold text-slate-800 dark:text-slate-200">Sunflower Hall 102</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400 font-medium">Lead Teacher</span>
+                <span id="sideChildTeacher" class="font-bold text-slate-800 dark:text-slate-200">Ms. Claire Simmons</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400 font-medium">Student ID</span>
+                <span id="sideChildId" class="font-mono font-bold text-slate-800 dark:text-slate-200">LK-2024-089</span>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex gap-2">
+              <button onclick="openAbsenceModal()" class="flex-1 py-2 px-3 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 dark:text-amber-300 text-xs font-bold transition text-center">
+                Report Absence
+              </button>
+              <button onclick="switchView('messages')" class="flex-1 py-2 px-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-bold transition text-center">
+                Message Teacher
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+  <div id="absenceModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="relative w-full max-w-lg bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-800">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-5">
+        <div>
+          <h3 class="text-xl font-black font-heading text-slate-900 dark:text-white">Submit Absence Notice</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Notify homeroom teacher &amp; school administration</p>
+        </div>
+        <button onclick="closeAbsenceModal()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition">
+          &times;
+        </button>
+      </div>
+
+      <form onsubmit="submitAbsenceRequest(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Student</label>
+          <input type="text" id="absenceStudentName" value="Leo Jenkins (Grade 1)" readonly class="w-full px-4 py-2.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Leave Date</label>
+            <input type="date" required value="2026-11-20" class="w-full px-4 py-2.5 rounded-xl text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-amber-400">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Reason</label>
+            <select class="w-full px-4 py-2.5 rounded-xl text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-amber-400">
+              <option>Medical / Pediatric Visit</option>
+              <option>Family Travel</option>
+              <option>Religious / Cultural Observance</option>
+              <option>Other Excused Absence</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Notes for Homeroom Educator</label>
+          <textarea rows="3" placeholder="Provide any details or medicine instructions..." class="w-full px-4 py-2.5 rounded-xl text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-amber-400"></textarea>
+        </div>
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <button type="button" onclick="closeAbsenceModal()" class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Cancel</button>
+          <button type="submit" class="px-6 py-2.5 rounded-xl text-xs font-black bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-md shadow-amber-400/20 transition">Submit Leave Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="paymentModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="relative w-full max-w-lg bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-800">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-5">
+        <div>
+          <h3 class="text-xl font-black font-heading text-slate-900 dark:text-white">Tuition &amp; Fee Checkout</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Secure payment via LumiPay Student Ledger</p>
+        </div>
+        <button onclick="closePaymentModal()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition">
+          &times;
+        </button>
+      </div>
+
+      <div class="space-y-4">
+        <div class="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 flex items-center justify-between">
+          <div>
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400">Total Outstanding</span>
+            <p class="text-2xl font-black text-amber-600 dark:text-amber-400">$1,450.00</p>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-black bg-amber-200/60 dark:bg-amber-900/60 text-amber-800 dark:text-amber-200">Term 3 Invoice</span>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Select Payment Method</label>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="flex items-center gap-2 p-3 rounded-xl border-2 border-emerald-400 bg-emerald-50/30 dark:bg-emerald-950/20 cursor-pointer">
+              <input type="radio" name="paymethod" checked class="text-emerald-500 focus:ring-emerald-400">
+              <span class="text-xs font-bold text-slate-900 dark:text-white">Credit Card (ending 4012)</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer">
+              <input type="radio" name="paymethod" class="text-emerald-500 focus:ring-emerald-400">
+              <span class="text-xs font-bold text-slate-900 dark:text-white">ACH Direct Bank</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <button type="button" onclick="closePaymentModal()" class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Cancel</button>
+          <button type="button" onclick="processPaymentSimulation()" class="px-6 py-2.5 rounded-xl text-xs font-black bg-emerald-500 hover:bg-emerald-400 text-white shadow-md shadow-emerald-500/20 transition">Confirm &amp; Pay $1,450.00</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  <script src="dashboard.js"></script>
+  <script>    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof renderDashboardContent === 'function') {
+        renderDashboardContent();
+      }
+    });
+  </script>
+</body>
+</html>

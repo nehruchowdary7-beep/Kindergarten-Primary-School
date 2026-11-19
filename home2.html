@@ -1,0 +1,1133 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LumiKids Academy | Premium Experience — Little Minds, Big Dreams!</title>
+  <meta name="description" content="LumiKids Academy Premium Campus Experience: Next-generation early education, STEAM innovation, Reggio Emilia inquiry, and vibrant nature learning.">
+  <link rel="icon" type="image/png" href="logo-light.png">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800;900&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    const lumiYellowScale = {
+      DEFAULT: '#FFB547',
+      50: '#FFF9ED',
+      100: '#FFF0D4',
+      200: '#FFE2AA',
+      300: '#FFD380',
+      400: '#FFC456',
+      500: '#FFB547',
+      600: '#FFA21F',
+      700: '#E58700',
+      800: '#B86800',
+      900: '#8A4B00',
+      950: '#3D2200'
+    };
+    const lumiMintScale = {
+      DEFAULT: '#4CBF9F',
+      50: '#ECFAF6',
+      100: '#D7F5EC',
+      200: '#AFEBD9',
+      300: '#86E0C5',
+      400: '#5ED5B2',
+      500: '#4CBF9F',
+      600: '#3AA788',
+      700: '#2C8E72',
+      800: '#1F755B',
+      900: '#145A45',
+      950: '#0E3128'
+    };
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+                    screens: {
+            'mobile': {'max': '639px'},
+            'tablet': {'min': '640px', 'max': '1023px'},
+            'desktop': {'min': '1024px', 'max': '1279px'},
+            'large': {'min': '1280px'},
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px'
+          },
+          colors: {
+            primary: lumiYellowScale,
+            secondary: lumiMintScale,
+            lumiYellow: lumiYellowScale,
+            lumiMint: lumiMintScale,
+            amber: lumiYellowScale,
+            emerald: lumiMintScale
+          },
+          fontFamily: {
+            heading: ['"Baloo 2"', 'cursive', 'sans-serif'],
+            body: ['"Nunito"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Specific Home 2 Premium Highlights */
+    .bento-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 2rem;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .bento-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -15px rgba(255, 181, 71, 0.25);
+      border-color: rgba(255, 181, 71, 0.5);
+    }
+    .gradient-border {
+      background: linear-gradient(135deg, #FFB547, #4CBF9F);
+      padding: 2px;
+      border-radius: 2.25rem;
+    }
+    .hero-stat-badge {
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.85);
+    }
+    html.dark .hero-stat-badge {
+      background: rgba(20, 29, 49, 0.85);
+    }
+    .facility-tab.active {
+      background: var(--primary);
+      color: #0F172A;
+      box-shadow: 0 6px 18px var(--primary-glow);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-lumiYellow selection:text-slate-900">
+
+  
+  <header id="mainHeader" class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        
+        <a href="index.html" class="flex items-center gap-3.5 group focus:outline-none">
+          <div class="relative h-14 w-auto flex items-center transition-transform duration-300 group-hover:scale-105 shrink-0">
+            <img src="logo-light.png" alt="LumiKids Academy Logo" class="site-logo-light h-14 w-auto object-contain drop-shadow-sm">
+            <img src="logo-dark.png" alt="LumiKids Academy Logo" class="site-logo-dark h-14 w-auto object-contain drop-shadow-md">
+          </div>
+          <div class="border-l border-slate-200 dark:border-slate-700 pl-3.5 flex flex-col justify-center">
+            <div class="text-2xl font-black font-heading leading-tight tracking-tight">
+              <span class="text-lumiYellow-600 dark:text-lumiYellow">Lumi</span><span class="text-lumiMint-600 dark:text-lumiMint">Kids</span>
+            </div>
+            
+          </div>
+        </a>
+
+        
+        <nav class="hidden md:flex items-center gap-1 bg-slate-100/70 dark:bg-slate-800/70 p-1.5 rounded-full border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-md">
+          
+          
+          <div class="relative group">
+            <button class="nav-link nav-pill active px-4 py-2 text-sm font-extrabold flex items-center gap-1.5 focus:outline-none">
+              <span>Home</span>
+              <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            <div class="absolute left-0 mt-2 w-60 rounded-2xl bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-700 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible -translate-y-1 group-hover:translate-y-0 transition-all duration-200 p-2 z-50 backdrop-blur-xl">
+              <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-bold transition">
+                <span class="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center text-amber-600 dark:text-amber-400 text-sm">
+                  <i class="fa-solid fa-school"></i>
+                </span>
+                <div>
+                  <span class="block text-slate-900 dark:text-white font-extrabold text-xs">Home 1</span>
+                  <span class="text-[10px] text-slate-500 font-normal">Standard Campus Edition</span>
+                </div>
+              </a>
+              <a href="home2.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 font-bold transition mt-1">
+                <span class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-sm">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <div>
+                  <span class="block text-slate-900 dark:text-white font-extrabold text-xs flex items-center gap-1.5">
+                    Home 2 (Current) <span class="px-1.5 py-0.2 rounded-full text-[9px] bg-amber-400 text-slate-950 font-black">PRO</span>
+                  </span>
+                  <span class="text-[10px] text-slate-400 font-normal">6 Ultra-Premium Sections</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link nav-pill px-3.5 py-2 text-xs font-extrabold">About Us</a>
+          <a href="classes.html" class="nav-link nav-pill px-3.5 py-2 text-xs font-extrabold">Classes</a>
+          <a href="admissions.html" class="nav-link nav-pill px-3.5 py-2 text-xs font-extrabold">Admissions</a>
+          <a href="gallery.html" class="nav-link nav-pill px-3.5 py-2 text-xs font-extrabold">Gallery</a>
+          <a href="dashboard.html" class="nav-link nav-pill px-3.5 py-2 text-xs font-extrabold flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-lumiMint animate-pulse"></span>
+            Parent Portal
+          </a>
+        </nav>
+
+        
+        <div class="flex items-center gap-2">
+          
+          
+          <button 
+            onclick="toggleDirection()" 
+            class="dir-toggle-btn flex items-center justify-center focus:outline-none" 
+            title="Toggle text direction (LTR / RTL)" 
+            aria-label="Toggle text direction"
+          >
+            <svg class="w-4 h-4 text-slate-700 dark:text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="21" y1="8" x2="3" y2="8"></line>
+              <polyline points="17 4 21 8 17 12"></polyline>
+              <line x1="3" y1="16" x2="21" y2="16"></line>
+              <polyline points="7 12 3 16 7 20"></polyline>
+            </svg>
+          </button>
+
+          
+          <button 
+            onclick="toggleTheme()" 
+            class="theme-toggle-btn flex items-center justify-center focus:outline-none"
+            title="Toggle Light / Dark Mode"
+            aria-label="Toggle Theme"
+          >
+            <span class="theme-toggle-icon flex items-center justify-center">
+              <svg class="w-4.5 h-4.5 text-slate-700 dark:text-slate-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+              </svg>
+            </span>
+          </button>
+
+          <button 
+            onclick="openTourModal()" 
+            class="hidden sm:inline-flex btn-primary px-5 py-2.5 text-sm items-center gap-2"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>Book VIP Tour</span>
+          </button>
+
+          <button 
+            onclick="toggleMobileMenu()" 
+            class="md:hidden p-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200"
+            aria-label="Open Mobile Menu"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    
+    <div id="mobileDrawer" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2">
+      <a href="index.html" class="nav-link flex items-center px-4 py-2.5 rounded-xl font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 whitespace-nowrap"><i class="fa-solid fa-school text-amber-500 mr-2"></i>Home 1 (Campus Edition)</a>
+      <a href="home2.html" class="nav-link flex items-center px-4 py-2.5 rounded-xl font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 whitespace-nowrap"><i class="fa-solid fa-star text-emerald-500 mr-2"></i>Home 2 (Premium Edition)</a>
+      <a href="about.html" class="nav-link flex items-center px-4 py-2.5 rounded-xl font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 whitespace-nowrap"><i class="fa-solid fa-circle-info text-amber-500 mr-2"></i>About Us</a>
+      <a href="classes.html" class="nav-link flex items-center px-4 py-2.5 rounded-xl font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 whitespace-nowrap"><i class="fa-solid fa-book-open text-emerald-500 mr-2"></i>Classes &amp; Curriculum</a>
+      <a href="admissions.html" class="nav-link flex items-center px-4 py-2.5 rounded-xl font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 whitespace-nowrap"><i class="fa-solid fa-graduation-cap text-amber-500 mr-2"></i>Admissions &amp; Fees</a>
+      <a href="gallery.html" class="nav-link flex items-center px-4 py-2.5 rounded-xl font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 whitespace-nowrap"><i class="fa-solid fa-palette text-emerald-500 mr-2"></i>Events &amp; Gallery</a>
+      <a href="contact.html" class="nav-link flex items-center px-4 py-2.5 rounded-xl font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 whitespace-nowrap"><i class="fa-solid fa-envelope-open-text text-amber-500 mr-2"></i>Contact Campus</a>
+      <a href="dashboard.html" class="nav-link flex items-center px-4 py-2.5 rounded-xl font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 border border-amber-300/40 whitespace-nowrap"><i class="fa-solid fa-user-lock text-emerald-500 mr-2"></i>Dashboard</a>
+      <div class="pt-2">
+        <button onclick="openTourModal()" class="btn-primary w-full py-3 text-sm flex items-center justify-center gap-2">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Book a Campus Tour</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+  <main class="flex-1">
+
+    
+    <section class="relative min-h-[calc(100vh-5rem)] lg:h-[calc(100vh-5rem)] flex flex-col justify-between py-6 sm:py-8 lg:py-6 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      
+      <div class="absolute inset-0 -z-20">
+        <img 
+          src="home2-hero.jpg" 
+          alt="LumiKids Academy Outdoor Garden Learning Circle with Teacher and Students" 
+          class="w-full h-full object-cover object-[center_48%]"
+        >
+      </div>
+
+      
+      <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-white/35 to-white/85 dark:from-slate-950/80 dark:via-slate-950/55 dark:to-slate-950/90 -z-10"></div>
+      
+      
+      <div></div>
+
+      
+      <div class="text-center max-w-4xl mx-auto my-auto py-2 sm:py-4">
+        
+        <p class="text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] text-slate-800 dark:text-amber-300 mb-2 sm:mb-3 flex items-center justify-center gap-2">
+          <span>LEARN</span>
+          <span class="text-amber-500 font-bold">&bull;</span>
+          <span>DISCOVER</span>
+          <span class="text-emerald-500 font-bold">&bull;</span>
+          <span>EXPERIENCE</span>
+          <span class="text-amber-500 font-bold">&bull;</span>
+          <span>FLOURISH</span>
+        </p>
+
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-heading text-slate-950 dark:text-white leading-[1.08] tracking-tight">
+          Discover Journeys
+          <span class="block font-serif italic text-amber-500 font-semibold tracking-normal mt-1.5 drop-shadow-sm">
+            Beyond Ordinary
+          </span>
+        </h1>
+
+        
+        <p class="mt-3.5 text-sm sm:text-base lg:text-lg text-slate-800 dark:text-slate-200 font-medium leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
+          Curated developmental pathways to the world's most extraordinary early learning experiences. More than schooling, we create wonder children never forget.
+        </p>
+
+        
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3.5">
+          <button onclick="openTourModal()" class="px-7 py-3.5 rounded-full font-heading font-black bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-xl hover:shadow-2xl shadow-amber-400/25 transition-all transform hover:scale-105 text-xs sm:text-sm flex items-center gap-2 cursor-pointer">
+            <span>Explore Programs</span>
+            <svg class="w-4 h-4 text-slate-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+          <a href="dashboard.html" class="px-7 py-3.5 rounded-full font-heading font-black bg-emerald-500 hover:bg-emerald-400 text-white shadow-xl hover:shadow-2xl shadow-emerald-500/25 transition-all transform hover:scale-105 text-xs sm:text-sm flex items-center gap-2 cursor-pointer">
+            <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <span>Open Dashboard</span>
+          </a>
+        </div>
+      </div>
+
+      
+      <div class="max-w-6xl mx-auto w-full relative z-10 pb-2">
+        <form onsubmit="handleHeroSearch(event)" class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-3xl lg:rounded-full p-2.5 sm:p-3 lg:py-2.5 lg:px-5 shadow-2xl border border-white/80 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-2.5 lg:gap-3 items-center">
+          
+          
+          <div class="lg:col-span-3 flex items-center gap-2.5 px-3 py-1.5 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+            <div class="w-8 h-8 rounded-full bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <label class="block text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400">Programs</label>
+              <select id="heroProgramSelect" class="bg-transparent text-xs font-bold text-slate-900 dark:text-white focus:outline-none w-full cursor-pointer">
+                <option value="All Programs" class="dark:bg-slate-900">Where to start?</option>
+                <option value="Toddler Explorers (1.5-3y)" class="dark:bg-slate-900">Toddlers (1.5 - 3y)</option>
+                <option value="Kindergarten Wonder (3-5y)" class="dark:bg-slate-900">Kindergarten (3 - 5y)</option>
+                <option value="Primary Prep (Grades 1-5)" class="dark:bg-slate-900">Primary Prep (Gr. 1-5)</option>
+                <option value="STEAM & Robotics Lab" class="dark:bg-slate-900">STEAM & Robotics Lab</option>
+              </select>
+            </div>
+          </div>
+
+          
+          <div class="lg:col-span-3 flex items-center gap-2.5 px-3 py-1.5 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition border-t sm:border-t-0 sm:border-l border-slate-200 dark:border-slate-800">
+            <div class="w-8 h-8 rounded-full bg-emerald-500/15 text-emerald-500 flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <label class="block text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400">Entry Term</label>
+              <select id="heroTermSelect" class="bg-transparent text-xs font-bold text-slate-900 dark:text-white focus:outline-none w-full cursor-pointer">
+                <option value="Immediate Intake" class="dark:bg-slate-900">Add dates / term</option>
+                <option value="Autumn Term 2026" selected class="dark:bg-slate-900">Autumn Term 2026</option>
+                <option value="Winter Term 2026/27" class="dark:bg-slate-900">Winter Term 2026/27</option>
+                <option value="Spring Term 2027" class="dark:bg-slate-900">Spring Term 2027</option>
+              </select>
+            </div>
+          </div>
+
+          
+          <div class="lg:col-span-2 flex items-center gap-2.5 px-3 py-1.5 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition border-t lg:border-t-0 lg:border-l border-slate-200 dark:border-slate-800">
+            <div class="w-8 h-8 rounded-full bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <label class="block text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400">Students</label>
+              <select id="heroAgeSelect" class="bg-transparent text-xs font-bold text-slate-900 dark:text-white focus:outline-none w-full cursor-pointer">
+                <option value="1 Child" class="dark:bg-slate-900">1 Student</option>
+                <option value="2 Children (Siblings)" selected class="dark:bg-slate-900">2 Students v</option>
+                <option value="3+ Children" class="dark:bg-slate-900">3+ Students</option>
+              </select>
+            </div>
+          </div>
+
+          
+          <div class="lg:col-span-2 flex items-center gap-2.5 px-3 py-1.5 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition border-t sm:border-t-0 sm:border-l border-slate-200 dark:border-slate-800">
+            <div class="w-8 h-8 rounded-full bg-emerald-500/15 text-emerald-500 flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <label class="block text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400">Schedule</label>
+              <select id="heroScheduleSelect" class="bg-transparent text-xs font-bold text-slate-900 dark:text-white focus:outline-none w-full cursor-pointer">
+                <option value="Full Day" class="dark:bg-slate-900">Full Day v</option>
+                <option value="Half Day" class="dark:bg-slate-900">Half Day</option>
+                <option value="After School" class="dark:bg-slate-900">Enrichment</option>
+              </select>
+            </div>
+          </div>
+
+          
+          <div class="lg:col-span-2">
+            <button type="submit" class="w-full bg-slate-950 text-white hover:bg-slate-900 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100 rounded-full py-3 px-4 font-heading font-black text-xs flex items-center justify-center gap-1.5 shadow-xl transition-all transform hover:scale-[1.02]">
+              <svg class="w-3.5 h-3.5 text-amber-400 dark:text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span>Search Journeys</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </section>
+    
+    <section class="py-16 lg:py-24 bg-slate-50/70 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          
+          
+          <div class="lg:col-span-5">
+            
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 mb-4">
+              <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+              <span>Official Academic Curriculum &bull; 2026-27 Cohorts Live</span>
+            </div>
+
+            
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black font-heading text-slate-900 dark:text-white leading-[1.08] tracking-tight">
+              Championship
+              <span class="block text-amber-500 mt-1">Growth by Grade</span>
+            </h2>
+
+            
+            <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mt-4 leading-relaxed font-medium">
+              Research-backed Reggio Emilia immersion, hands-on STEAM inquiry, and compassionate emotional guidance. Every classroom is calibrated for safety, joy, and individual developmental breakthroughs.
+            </p>
+
+            
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 mt-6">
+              <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm text-center">
+                <span class="block text-2xl sm:text-3xl font-black font-heading text-slate-900 dark:text-white">1 : 8</span>
+                <span class="block text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-1">Ratio</span>
+              </div>
+              <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm text-center">
+                <span class="block text-2xl sm:text-3xl font-black font-heading text-slate-900 dark:text-white">4</span>
+                <span class="block text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-1">Disciplines</span>
+              </div>
+              <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm text-center">
+                <span class="block text-2xl sm:text-3xl font-black font-heading text-slate-900 dark:text-white">100%</span>
+                <span class="block text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-1">Accredited</span>
+              </div>
+            </div>
+
+            
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="classes.html" class="px-7 py-3.5 rounded-full font-heading font-black bg-slate-950 text-white hover:bg-slate-900 dark:bg-amber-400 dark:text-slate-950 dark:hover:bg-amber-300 shadow-xl transition-all transform hover:scale-105 text-xs sm:text-sm flex items-center gap-2">
+                <span>&darr; EXPLORE ALL 4 TIERS</span>
+              </a>
+              <button onclick="downloadProspectus()" class="px-7 py-3.5 rounded-full font-heading font-black bg-emerald-500 hover:bg-emerald-400 text-white shadow-xl hover:shadow-2xl shadow-emerald-500/25 transition-all transform hover:scale-105 text-xs sm:text-sm flex items-center gap-2 cursor-pointer">
+                <span>Official Curriculum Vault</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+
+          
+          <div class="lg:col-span-7">
+            <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 dark:border-slate-800 bg-slate-950 relative group">
+              
+              
+              <div class="relative h-[290px] sm:h-[340px] lg:h-[380px] overflow-hidden flex w-full">
+                
+                
+                <div class="relative w-1/4 h-full overflow-hidden border-r-2 border-slate-900/80 skew-x-[-7deg] origin-bottom scale-110">
+                  <img 
+                    src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" 
+                    alt="Early Childhood Literacy and Discovery" 
+                    class="w-full h-full object-cover -skew-x-[-7deg] scale-125 group-hover:scale-135 transition-transform duration-700"
+                  >
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/20"></div>
+                </div>
+
+                
+                <div class="relative w-1/4 h-full overflow-hidden border-r-2 border-slate-900/80 skew-x-[-7deg] origin-bottom scale-110">
+                  <img 
+                    src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&q=80" 
+                    alt="Creative Arts and Fine Motor Color Studio" 
+                    class="w-full h-full object-cover -skew-x-[-7deg] scale-125 group-hover:scale-135 transition-transform duration-700"
+                  >
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/20"></div>
+                </div>
+
+                
+                <div class="relative w-1/4 h-full overflow-hidden border-r-2 border-slate-900/80 skew-x-[-7deg] origin-bottom scale-110">
+                  <img 
+                    src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" 
+                    alt="STEAM Science and Investigative Laboratory" 
+                    class="w-full h-full object-cover -skew-x-[-7deg] scale-125 group-hover:scale-135 transition-transform duration-700"
+                  >
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/20"></div>
+                </div>
+
+                
+                <div class="relative w-1/4 h-full overflow-hidden skew-x-[-7deg] origin-bottom scale-110">
+                  <img 
+                    src="https://images.unsplash.com/photo-1576495199011-eb94736d05d6?auto=format&fit=crop&w=600&q=80" 
+                    alt="Outdoor Eco-Park and Movement Play" 
+                    class="w-full h-full object-cover -skew-x-[-7deg] scale-125 group-hover:scale-135 transition-transform duration-700"
+                  >
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/20"></div>
+                </div>
+
+              </div>
+
+              
+              <div class="absolute bottom-14 left-4 right-4 bg-slate-950/90 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 flex items-center justify-between text-xs font-black z-10 shadow-lg">
+                <span class="text-white tracking-wider flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                  4 CHAMPIONSHIP DISCIPLINES
+                </span>
+                <span class="text-emerald-400 tracking-wider">100% REGGIO & STEAM CERTIFIED</span>
+              </div>
+
+              
+              <div class="px-5 py-3.5 bg-white dark:bg-slate-900 flex flex-wrap items-center justify-between gap-3 text-xs font-bold border-t border-slate-200 dark:border-slate-800">
+                <div class="flex flex-wrap items-center gap-3 text-slate-700 dark:text-slate-300">
+                  <span class="hover:text-amber-500 cursor-pointer transition">Toddlers</span>
+                  <span class="text-slate-300 dark:text-slate-700">&bull;</span>
+                  <span class="hover:text-amber-500 cursor-pointer transition">Kindergarten</span>
+                  <span class="text-slate-300 dark:text-slate-700">&bull;</span>
+                  <span class="hover:text-amber-500 cursor-pointer transition">Primary Prep</span>
+                  <span class="text-slate-300 dark:text-slate-700">&bull;</span>
+                  <span class="hover:text-amber-500 cursor-pointer transition">STEAM Lab</span>
+                  <span class="text-slate-300 dark:text-slate-700">&bull;</span>
+                  <span class="hover:text-amber-500 cursor-pointer transition">Eco-Turf</span>
+                </div>
+                <span class="text-amber-600 dark:text-amber-400 font-black tracking-wider uppercase">2026-27 COHORTS</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    
+    <section class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+          <div>
+            <span class="text-xs uppercase tracking-widest font-extrabold text-amber-600 dark:text-amber-400">Architected for Joy</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white mt-2">
+              World-Class Facilities Showcase
+            </h2>
+            <p class="text-slate-600 dark:text-slate-300 font-medium mt-3 text-base sm:text-lg max-w-xl">
+              Take an interactive peek into our spaces engineered with natural light, ergonomic child-height furniture, and zero-VOC materials.
+            </p>
+          </div>
+
+          
+          <div class="flex flex-wrap gap-2 bg-slate-100 dark:bg-slate-800 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-700">
+            <button onclick="switchFacilityTab('steam')" id="tab-steam" class="facility-tab active px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+              <i class="fa-solid fa-flask"></i>
+              <span>STEAM Lab</span>
+            </button>
+            <button onclick="switchFacilityTab('library')" id="tab-library" class="facility-tab px-4 py-2 rounded-xl text-xs font-bold transition text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Cloud Library</span>
+            </button>
+            <button onclick="switchFacilityTab('park')" id="tab-park" class="facility-tab px-4 py-2 rounded-xl text-xs font-bold transition text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+              <i class="fa-solid fa-seedling"></i>
+              <span>Splash Park</span>
+            </button>
+            <button onclick="switchFacilityTab('dining')" id="tab-dining" class="facility-tab px-4 py-2 rounded-xl text-xs font-bold transition text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+              <i class="fa-solid fa-utensils"></i>
+              <span>Organic Cafe</span>
+            </button>
+          </div>
+        </div>
+
+        
+        <div id="facilityDisplay" class="glass-card overflow-hidden p-6 md:p-10 rounded-3xl border-2 border-amber-300/40">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7 rounded-2xl overflow-hidden shadow-2xl relative h-80 sm:h-96">
+              <img 
+                id="facilityImage" 
+                src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80" 
+                alt="Facility Space" 
+                class="w-full h-full object-cover transition-all duration-500"
+              >
+              <div class="absolute top-4 left-4 bg-slate-950/70 backdrop-blur-md text-amber-400 px-3.5 py-1 rounded-full text-xs font-bold border border-amber-400/30">
+                <span id="facilityBadge">Horizon Innovation Wing</span>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 space-y-6">
+              <div>
+                <span id="facilitySubtitle" class="text-xs uppercase font-extrabold text-amber-500 tracking-wider">Ages 3 to 11 Years</span>
+                <h3 id="facilityTitle" class="text-3xl font-bold font-heading text-slate-900 dark:text-white mt-1">
+                  The Young Inventors' STEAM Lab
+                </h3>
+                <p id="facilityDesc" class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
+                  Equipped with modular magnetic circuits, solar windmill assembly tables, intuitive block-coding tablets, and child-safe mechanical gears. Guided by specialized STEAM coaches.
+                </p>
+              </div>
+
+              
+              <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs">
+                <div>
+                  <span class="text-slate-400 block font-bold">Safety Standard:</span>
+                  <strong class="text-slate-800 dark:text-white text-sm">EN71 Child-Safe Certified</strong>
+                </div>
+                <div>
+                  <span class="text-slate-400 block font-bold">Max Class Size:</span>
+                  <strong class="text-slate-800 dark:text-white text-sm">12 Students per Session</strong>
+                </div>
+                <div>
+                  <span class="text-slate-400 block font-bold">Air Purification:</span>
+                  <strong class="text-slate-800 dark:text-white text-sm">Medical Grade HEPA-H14</strong>
+                </div>
+                <div>
+                  <span class="text-slate-400 block font-bold">Observation:</span>
+                  <strong class="text-slate-800 dark:text-white text-sm">Live Parent Portal Feed</strong>
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <button onclick="openTourModal()" class="btn-primary w-full py-3.5 text-sm font-bold shadow-lg flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  <span>Schedule In-Person Facility Tour</span>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section class="py-20 lg:py-28 bg-gradient-to-b from-transparent via-amber-500/[0.03] to-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 mb-3">
+            <svg class="w-3.5 h-3.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/></svg>
+            <span>Explore Our Programs</span>
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-heading text-slate-900 dark:text-white tracking-tight">
+            Shop by <span class="text-amber-500">Category</span>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mt-3 max-w-2xl mx-auto font-medium leading-relaxed">
+            Discover your child's ideal developmental pathway, from joyful early sensory discovery to advanced STEAM inquiry, all in one place.
+          </p>
+        </div>
+
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          
+          
+          <div class="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[380px] sm:min-h-[440px] lg:min-h-full p-6 sm:p-8 flex flex-col justify-end group shadow-xl border border-slate-200/80 dark:border-slate-800 transition-all duration-300 hover:shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=800&q=80" 
+              alt="Toddler Explorers - Early Sensory & Wooden Block Discovery" 
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 -z-10"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-slate-950/15 group-hover:via-slate-950/60 transition-colors -z-10"></div>
+            
+            
+            <div class="relative z-10 text-white">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 block mb-1.5">
+                01 / Early Discovery
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+                Toddler Explorers
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-200 mt-2 line-clamp-2 leading-relaxed max-w-sm">
+                Sensory tactile stations, gentle emotional grounding, speech development, and motor coordination in a joyful sanctuary (Ages 1.5 - 3).
+              </p>
+              <a href="classes.html" class="inline-flex items-center gap-2.5 text-xs sm:text-sm font-bold text-white hover:text-amber-300 mt-5 group/btn">
+                <span>Explore Toddlers</span>
+                <span class="w-6 h-6 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            
+            <div class="relative rounded-3xl overflow-hidden min-h-[200px] sm:min-h-[220px] lg:h-[220px] p-5 sm:p-6 flex flex-col justify-end group shadow-lg border border-slate-200/80 dark:border-slate-800 transition-all duration-300 hover:shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&fit=crop&w=600&q=80" 
+                alt="Kindergarten Wonder - Phonics & Nature Exploration" 
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 -z-10"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent group-hover:via-slate-950/60 transition-colors -z-10"></div>
+              
+              <div class="relative z-10 text-white">
+                <span class="text-[11px] font-extrabold uppercase tracking-widest text-emerald-400 block mb-0.5">
+                  02 / Nature School
+                </span>
+                <h4 class="text-xl font-bold font-heading text-white">
+                  Kindergarten Wonder
+                </h4>
+                <a href="classes.html" class="inline-flex items-center gap-2 text-xs font-bold text-slate-200 hover:text-amber-300 mt-2.5 group/btn">
+                  <span>Explore Now</span>
+                  <span class="w-5 h-5 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center text-[10px] font-black group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform">&nearr;</span>
+                </a>
+              </div>
+            </div>
+
+            
+            <div class="relative rounded-3xl overflow-hidden min-h-[200px] sm:min-h-[220px] lg:h-[220px] p-5 sm:p-6 flex flex-col justify-end group shadow-lg border border-slate-200/80 dark:border-slate-800 transition-all duration-300 hover:shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80" 
+                alt="Primary Prep Academy - Critical Thinking & Research" 
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 -z-10"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent group-hover:via-slate-950/60 transition-colors -z-10"></div>
+              
+              <div class="relative z-10 text-white">
+                <span class="text-[11px] font-extrabold uppercase tracking-widest text-amber-400 block mb-0.5">
+                  03 / Critical Thinking
+                </span>
+                <h4 class="text-xl font-bold font-heading text-white">
+                  Primary Prep Academy
+                </h4>
+                <a href="classes.html" class="inline-flex items-center gap-2 text-xs font-bold text-slate-200 hover:text-amber-300 mt-2.5 group/btn">
+                  <span>Explore Now</span>
+                  <span class="w-5 h-5 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center text-[10px] font-black group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform">&nearr;</span>
+                </a>
+              </div>
+            </div>
+
+            
+            <div class="relative rounded-3xl overflow-hidden min-h-[200px] sm:min-h-[220px] lg:h-[220px] p-5 sm:p-6 flex flex-col justify-end group shadow-lg border border-slate-200/80 dark:border-slate-800 transition-all duration-300 hover:shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" 
+                alt="STEAM & Robotics Studio - Coding and Mechanics" 
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 -z-10"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent group-hover:via-slate-950/60 transition-colors -z-10"></div>
+              
+              <div class="relative z-10 text-white">
+                <span class="text-[11px] font-extrabold uppercase tracking-widest text-emerald-400 block mb-0.5">
+                  04 / Innovation Lab
+                </span>
+                <h4 class="text-xl font-bold font-heading text-white">
+                  STEAM & Robotics
+                </h4>
+                <a href="classes.html" class="inline-flex items-center gap-2 text-xs font-bold text-slate-200 hover:text-amber-300 mt-2.5 group/btn">
+                  <span>Explore Now</span>
+                  <span class="w-5 h-5 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center text-[10px] font-black group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform">&nearr;</span>
+                </a>
+              </div>
+            </div>
+
+            
+            <div class="relative rounded-3xl overflow-hidden min-h-[200px] sm:min-h-[220px] lg:h-[220px] p-5 sm:p-6 flex flex-col justify-end group shadow-lg border border-slate-200/80 dark:border-slate-800 transition-all duration-300 hover:shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=600&q=80" 
+                alt="Music, Drama and Atelier Arts" 
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 -z-10"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent group-hover:via-slate-950/60 transition-colors -z-10"></div>
+              
+              <div class="relative z-10 text-white">
+                <span class="text-[11px] font-extrabold uppercase tracking-widest text-amber-400 block mb-0.5">
+                  05 / Creative Studio
+                </span>
+                <h4 class="text-xl font-bold font-heading text-white">
+                  Music & Atelier Arts
+                </h4>
+                <a href="classes.html" class="inline-flex items-center gap-2 text-xs font-bold text-slate-200 hover:text-amber-300 mt-2.5 group/btn">
+                  <span>Explore Now</span>
+                  <span class="w-5 h-5 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center text-[10px] font-black group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform">&nearr;</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    
+    <section class="py-20 lg:py-28 bg-slate-100/60 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs uppercase tracking-widest font-extrabold text-amber-600 dark:text-amber-400">Real Stories, Real Transformation</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white mt-2">
+            Loved by 2,400+ Families Worldwide
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 font-medium mt-4 text-base sm:text-lg">
+            Hear how LumiKids Academy unlocked curiosity, confidence, and radiant happiness for their children.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          
+          <div class="bento-card p-8 bg-white dark:bg-slate-900 relative">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm gap-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600">Verified Parent</span>
+            </div>
+            <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic mb-6">
+              "Leo's progress at LumiKids has been breathtaking. He talks about friction, solar circuits, and empathy at our dinner table. The teachers don't just instruct; they ignite a flame!"
+            </p>
+            <div class="flex items-center gap-3.5 pt-4 border-t border-slate-200 dark:border-slate-800">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&crop=faces&w=160&h=160&q=80" alt="Sarah Jenkins" class="w-14 h-14 rounded-full object-cover object-center border-2 border-amber-400 shrink-0 shadow-md">
+              <div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Sarah Jenkins</h4>
+                <p class="text-xs text-slate-500">Mom of Leo (Grade 1)</p>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="bento-card p-8 bg-white dark:bg-slate-900 relative">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm gap-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600">Verified Parent</span>
+            </div>
+            <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic mb-6">
+              "The digital Parent Portal gives us so much peace of mind! Every week I can see Mia's attendance streak, download her skill milestones, and message her teacher instantly. Incredible school."
+            </p>
+            <div class="flex items-center gap-3.5 pt-4 border-t border-slate-200 dark:border-slate-800">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&crop=faces&w=160&h=160&q=80" alt="Marcus Vance" class="w-14 h-14 rounded-full object-cover object-center border-2 border-emerald-400 shrink-0 shadow-md">
+              <div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Marcus Vance</h4>
+                <p class="text-xs text-slate-500">Dad of Mia (Kindergarten)</p>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="bento-card p-8 bg-white dark:bg-slate-900 relative">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm gap-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600">Verified Parent</span>
+            </div>
+            <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic mb-6">
+              "The 5-acre eco-campus makes all the difference in the world. Instead of being glued to screens, Sophia returns home singing songs about worms, planting seedlings, and feeling accomplished."
+            </p>
+            <div class="flex items-center gap-3.5 pt-4 border-t border-slate-200 dark:border-slate-800">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=160&h=160&q=80" alt="Elena Rostova" class="w-14 h-14 rounded-full object-cover object-center border-2 border-amber-400 shrink-0 shadow-md">
+              <div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Elena Rostova</h4>
+                <p class="text-xs text-slate-500">Mom of Sophia (Toddlers)</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section class="py-20 lg:py-28 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="rounded-3xl p-8 sm:p-12 lg:p-14 bg-gradient-to-r from-lumiYellow via-amber-400 to-lumiMint text-slate-950 shadow-2xl relative overflow-hidden">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+            
+            
+            <div class="lg:col-span-5 relative">
+              <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 group h-72 sm:h-80 lg:h-96">
+                <img 
+                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" 
+                  alt="Young Student Exploring and Learning in LumiKids Classroom" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-lg border border-white/40 flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-600 flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4 fill-amber-500 text-amber-500" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-black text-slate-900 dark:text-white leading-tight">VIP Experience Pass</span>
+                    <span class="block text-[11px] text-slate-500 dark:text-slate-400 font-medium">Personalized STEAM Kit Included</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="lg:col-span-7">
+              <span class="inline-block px-3.5 py-1 rounded-full bg-slate-950 text-amber-300 text-xs font-black uppercase tracking-wider mb-4">
+                Exclusive VIP Campus Visit
+              </span>
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-heading leading-tight text-slate-950">
+                Experience the Wonder in Person With Your Family
+              </h2>
+              <p class="mt-4 text-base sm:text-lg text-slate-900 font-semibold leading-relaxed">
+                Meet our founding Head of School, shadow a live STEAM lesson, explore the Reading Teepees, and receive an individualized developmental roadmap for your child.
+              </p>
+
+              <div class="mt-6 flex flex-wrap items-center gap-6 text-xs font-black text-slate-950">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-800"></i>45-Min Private Educator Guided Walk</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-800"></i>Personalized STEAM Activity Kit Included</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-800"></i>0% Enrollment Application Fee Waiver</span>
+              </div>
+
+              <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+                <button onclick="openTourModal()" class="w-full sm:w-auto px-8 py-4 rounded-full font-heading font-black bg-slate-950 text-white hover:bg-slate-900 shadow-xl transition-all transform hover:scale-105 text-center text-sm sm:text-base flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-calendar-check text-amber-400"></i>
+                  <span>Schedule VIP Campus Tour</span>
+                </button>
+                <a href="admissions.html" class="w-full sm:w-auto px-8 py-4 rounded-full font-heading font-black bg-white/90 text-slate-950 hover:bg-white shadow-xl transition-all transform hover:scale-105 text-center text-sm sm:text-base">
+                  <span>View Tuition & Apply</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3.5 mb-4">
+            <div class="relative h-14 w-auto flex items-center shrink-0">
+              <img src="logo-light.png" alt="LumiKids Logo" class="site-logo-light h-14 w-auto object-contain">
+              <img src="logo-dark.png" alt="LumiKids Logo" class="site-logo-dark h-14 w-auto object-contain">
+            </div>
+            <div class="border-l border-slate-200 dark:border-slate-700 pl-3.5 flex flex-col justify-center">
+              <div class="text-2xl font-black font-heading leading-tight tracking-tight">
+                <span class="text-lumiYellow-600 dark:text-lumiYellow">Lumi</span><span class="text-lumiMint-600 dark:text-lumiMint">Kids</span>
+              </div>
+              
+            </div>
+          </div>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-sm mb-6">
+            "Little Minds, Big Dreams!" — Inspiring curiosity, self-confidence, and a lifelong love of learning in early childhood education.
+          </p>
+          <div class="flex items-center gap-3 text-slate-500">
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-lumiYellow hover:text-slate-900 flex items-center justify-center transition"></a>
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-lumiMint hover:text-white flex items-center justify-center transition"></a>
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-lumiYellow hover:text-slate-900 flex items-center justify-center transition">▶️</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-400 font-semibold">
+            <li><a href="index.html" class="hover:text-amber-500">Home 1 (Standard)</a></li>
+            <li><a href="home2.html" class="text-amber-500 font-bold hover:underline">Home 2 (Premium Edition)</a></li>
+            <li><a href="classes.html" class="hover:text-amber-500">Curriculum & Age Tiers</a></li>
+            <li><a href="admissions.html" class="hover:text-amber-500">Admissions & Tuition</a></li>
+            <li><a href="gallery.html" class="hover:text-amber-500">Student Showcase</a></li>
+            <li><a href="dashboard.html" class="hover:text-emerald-500">Parent Login Portal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white mb-4">Programs</h4>
+          <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-400 font-semibold">
+            <li><a href="classes.html" class="hover:text-amber-500">Toddler Discoverers (1.5-3y)</a></li>
+            <li><a href="classes.html" class="hover:text-amber-500">Kindergarten Explorers (3-5y)</a></li>
+            <li><a href="classes.html" class="hover:text-amber-500">Primary Innovators (Grades 1-5)</a></li>
+            <li><a href="classes.html" class="hover:text-amber-500">STEAM & Robotics Lab</a></li>
+            <li><a href="classes.html" class="hover:text-amber-500">Eco-Nature Play Park</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white mb-4">Campus Contact</h4>
+          <address class="not-italic text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <p> 742 Sunshine Meadows Lane<br>Cambridge Education District</p>
+            <p> +1 (555) 382-LUMI (5864)</p>
+            <p>✉️ hello@lumikids.academy</p>
+            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-bold mt-2">Mon - Fri: 7:30 AM – 6:00 PM</p>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>&copy; 2026 LumiKids Academy. All Rights Reserved. Crafted with care for little minds with big dreams.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Child Safeguarding Code</a>
+          <a href="#" class="hover:underline">Terms of Enrollment</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+
+  
+  <div id="tourModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-card max-w-lg w-full p-8 rounded-3xl bg-white dark:bg-slate-900 shadow-2xl relative border border-amber-300/40">
+      <button onclick="closeTourModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 dark:hover:text-white text-xl font-bold">✕</button>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-600 flex items-center justify-center text-2xl font-bold"></div>
+        <div>
+          <h3 class="text-2xl font-bold font-heading text-slate-900 dark:text-white">Book a Campus Tour</h3>
+          <p class="text-xs text-slate-500">Experience the laughter and learning firsthand</p>
+        </div>
+      </div>
+      <form onsubmit="handleTourBooking(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Your Full Name *</label>
+          <input id="tourParentName" required type="text" placeholder="Sarah Jenkins" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm dark:text-white">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Email Address *</label>
+            <input required type="email" placeholder="sarah@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm dark:text-white">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Mobile Phone *</label>
+            <input required type="tel" placeholder="+1 (555) 382-LUMI" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm dark:text-white">
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Preferred Date *</label>
+            <input id="tourDate" required type="date" value="2026-11-20" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm dark:text-white">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Time Slot</label>
+            <select class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm dark:text-white font-medium">
+              <option>10:00 AM (Morning Session)</option>
+              <option>02:00 PM (Afternoon Session)</option>
+              <option>04:30 PM (Twilight Tour)</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary w-full py-3.5 text-base font-bold shadow-lg">Confirm Tour Booking ✨</button>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl p-4 flex items-center gap-3">
+    <div id="toastIcon"></div>
+    <div class="flex-1"><p id="toastMessage" class="text-xs font-bold text-slate-800 dark:text-slate-100"></p></div>
+  </div>
+
+  
+  <script src="main.js"></script>
+  <script>
+    // Facility Switcher Logic for Section 3
+    const facilitiesData = {
+      steam: {
+        badge: "Horizon Innovation Wing",
+        title: "The Young Inventors' STEAM Lab",
+        subtitle: "Ages 3 to 11 Years",
+        desc: "Equipped with modular magnetic circuits, solar windmill assembly tables, intuitive block-coding tablets, and child-safe mechanical gears. Guided by specialized STEAM coaches.",
+        image: "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80"
+      },
+      library: {
+        badge: "Literacy & Storytelling",
+        title: "The Cloud Sanctuary & Reading Teepees",
+        subtitle: "Over 4,000 Curated Picture Books",
+        desc: "Designed with plush acoustic beanbags, whimsical wooden reading teepees, and phonics audio pods that cultivate a lifelong addiction to books and imaginative storytelling.",
+        image: "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1000&q=80"
+      },
+      park: {
+        badge: "Biophilic Adventure Oasis",
+        title: "Sensory Splash Creek & Eco-Park",
+        subtitle: "5-Acre Outdoor Sanctuary",
+        desc: "Features wooden balancing logs, running gravity water channels, an organic herb sensory maze, and mud kitchen where physics and biology come alive under open skies.",
+        image: "https://images.unsplash.com/photo-1560421683-6856ea585c78?auto=format&fit=crop&w=1000&q=80"
+      },
+      dining: {
+        badge: "Nutrition & Health",
+        title: "Sunny Farm-to-Table Organic Cafe",
+        subtitle: "Certified Pediatric Chef",
+        desc: "Daily scratch-cooked lunches featuring 100% organic farm vegetables, allergen-free nut alternatives, cold-pressed fruit refreshers, and mindful family table manners.",
+        image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=80"
+      }
+    };
+
+    function switchFacilityTab(key) {
+      const data = facilitiesData[key];
+      if (!data) return;
+
+      document.querySelectorAll('.facility-tab').forEach(tab => {
+        tab.classList.remove('active');
+        tab.classList.add('text-slate-600', 'dark:text-slate-300');
+      });
+
+      const activeBtn = document.getElementById('tab-' + key);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+        activeBtn.classList.remove('text-slate-600', 'dark:text-slate-300');
+      }
+
+      const imgEl = document.getElementById('facilityImage');
+      const badgeEl = document.getElementById('facilityBadge');
+      const titleEl = document.getElementById('facilityTitle');
+      const subEl = document.getElementById('facilitySubtitle');
+      const descEl = document.getElementById('facilityDesc');
+
+      if (imgEl) imgEl.src = data.image;
+      if (badgeEl) badgeEl.textContent = data.badge;
+      if (titleEl) titleEl.textContent = data.title;
+      if (subEl) subEl.textContent = data.subtitle;
+      if (descEl) descEl.textContent = data.desc;
+    }
+
+    function playCampusVideoMock() {
+      showToast("Playing LumiKids Academy 2.0 4K Cinematic Tour...", "info");
+      openTourModal();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Sign In | LumiKids Academy</title>
+  <meta name="description" content="Sign in to LumiKids Academy Dashboard to access attendance, reports, schedules and fee payments.">
+  <link rel="icon" type="image/png" href="logo-light.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    const lumiYellowScale = {
+      DEFAULT: '#FFB547',
+      50: '#FFF9ED',
+      100: '#FFF0D4',
+      200: '#FFE2AA',
+      300: '#FFD380',
+      400: '#FFC456',
+      500: '#FFB547',
+      600: '#FFA21F',
+      700: '#E58700',
+      800: '#B86800',
+      900: '#8A4B00',
+      950: '#3D2200'
+    };
+    const lumiMintScale = {
+      DEFAULT: '#4CBF9F',
+      50: '#ECFAF6',
+      100: '#D7F5EC',
+      200: '#AFEBD9',
+      300: '#86E0C5',
+      400: '#5ED5B2',
+      500: '#4CBF9F',
+      600: '#3AA788',
+      700: '#2C8E72',
+      800: '#1F755B',
+      900: '#145A45',
+      950: '#0E3128'
+    };
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: lumiYellowScale,
+            secondary: lumiMintScale,
+            lumiYellow: lumiYellowScale,
+            lumiMint: lumiMintScale,
+            amber: lumiYellowScale,
+            emerald: lumiMintScale
+          },
+          screens: {
+            'mobile': {'max': '639px'},
+            'tablet': {'min': '640px', 'max': '1023px'},
+            'desktop': {'min': '1024px', 'max': '1279px'},
+            'large': {'min': '1280px'},
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px'
+          },
+          fontFamily: {
+            heading: ['"Baloo 2"', 'cursive', 'sans-serif'],
+            body: ['"Nunito"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen lg:h-screen w-full flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden antialiased selection:bg-lumiYellow selection:text-slate-900 bg-slate-50 dark:bg-slate-950 font-body">
+  <aside class="w-full lg:w-1/2 lg:h-full relative flex flex-col justify-between p-6 sm:p-8 lg:p-10 xl:p-14 bg-gradient-to-br from-amber-100/60 via-amber-50/80 to-emerald-50/50 dark:from-slate-900 dark:via-slate-900/95 dark:to-slate-950 border-b lg:border-b-0 lg:border-r border-amber-200/50 dark:border-slate-800/80 overflow-hidden shrink-0">
+    <div class="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-lumiYellow/20 dark:bg-lumiYellow/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-lumiMint/20 dark:bg-lumiMint/10 blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <a href="index.html" class="inline-flex items-center gap-2.5 group focus:outline-none">
+        <div class="relative h-11 w-auto flex items-center transition-transform duration-300 group-hover:scale-105 shrink-0">
+          <img src="logo-light.png" alt="LumiKids Academy Logo" class="site-logo-light h-11 w-auto object-contain drop-shadow-sm">
+          <img src="logo-dark.png" alt="LumiKids Academy Logo" class="site-logo-dark h-11 w-auto object-contain drop-shadow-md">
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="text-xl sm:text-2xl font-black font-heading text-lumiYellow-600 dark:text-lumiYellow leading-none tracking-tight">
+              Lumi<span class="text-lumiMint-600 dark:text-lumiMint">Kids</span>
+            </span>
+          </div>
+          <span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 tracking-wider mt-0.5">
+            Little Minds, Big Dreams!
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="relative z-10 my-6 lg:my-auto max-w-lg space-y-4 xl:space-y-5">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 dark:bg-slate-800/90 border border-amber-300/60 dark:border-slate-700 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-[10px] font-extrabold tracking-wider uppercase text-slate-700 dark:text-slate-200">
+          Your Everyday Learning Partner
+        </span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-black font-heading tracking-tight leading-[1.1] text-slate-900 dark:text-white">
+        Fresh starts.<br>
+        <span class="text-amber-500">Happy minds.</span>
+      </h1>
+      <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+        Welcome back to a simpler way of school engagement. View real-time attendance, teacher feedback, daily organic cafeteria menus, and GPS bus tracking from one safe parent dashboard.
+      </p>
+      <div class="flex flex-wrap items-center gap-2 pt-1">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 dark:bg-slate-800/95 border border-amber-300/60 dark:border-slate-700 text-[11px] font-bold text-slate-800 dark:text-slate-200 shadow-sm transition hover:scale-105">
+          <svg class="w-3.5 h-3.5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          Fresh essentials
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 dark:bg-slate-800/95 border border-amber-300/60 dark:border-slate-700 text-[11px] font-bold text-slate-800 dark:text-slate-200 shadow-sm transition hover:scale-105">
+          <svg class="w-3.5 h-3.5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          Easy tracking
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 dark:bg-slate-800/95 border border-amber-300/60 dark:border-slate-700 text-[11px] font-bold text-slate-800 dark:text-slate-200 shadow-sm transition hover:scale-105">
+          <svg class="w-3.5 h-3.5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          Fast updates
+        </span>
+      </div>
+
+    </div>
+    <div class="relative z-10 pt-2 text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+      Fresh essentials. Happier days.
+    </div>
+
+  </aside>
+  <main class="w-full lg:w-1/2 lg:h-full flex flex-col justify-between p-6 sm:p-8 lg:p-10 xl:p-14 bg-white dark:bg-slate-950 relative overflow-y-auto">
+    <header class="flex items-center justify-end gap-2 sm:gap-2.5 w-full shrink-0">
+      
+          <button 
+            onclick="toggleDirection()" 
+            class="dir-toggle-btn flex items-center justify-center focus:outline-none" 
+            title="Toggle text direction (LTR / RTL)" 
+            aria-label="Toggle text direction"
+          >
+            <svg class="w-4 h-4 text-slate-700 dark:text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="21" y1="8" x2="3" y2="8"></line>
+              <polyline points="17 4 21 8 17 12"></polyline>
+              <line x1="3" y1="16" x2="21" y2="16"></line>
+              <polyline points="7 12 3 16 7 20"></polyline>
+            </svg>
+          </button>
+
+          
+          <button 
+            onclick="toggleTheme()" 
+            class="theme-toggle-btn flex items-center justify-center focus:outline-none"
+            title="Toggle Light / Dark Mode"
+            aria-label="Toggle Theme"
+          >
+            <span class="theme-toggle-icon flex items-center justify-center">
+              <svg class="w-4.5 h-4.5 text-slate-700 dark:text-slate-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+              </svg>
+            </span>
+          </button>
+    </header>
+    <div class="my-auto py-4 sm:py-6 max-w-sm w-full mx-auto">
+      <div id="loginView" class="space-y-4 transition-all duration-300">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-slate-900 dark:text-white">
+            Login to <span class="text-amber-500">Lumi</span><span class="text-emerald-500">Kids</span>
+          </h2>
+          <div class="flex items-center justify-between gap-2 mt-1">
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+              Enter your account details to continue.
+            </p>
+            <button 
+              type="button" 
+              onclick="fillDemoCreds()" 
+              class="text-[11px] font-extrabold text-amber-600 dark:text-amber-400 hover:underline uppercase tracking-wider shrink-0 cursor-pointer"
+              title="Auto-fill Sarah Jenkins demo credentials"
+            >
+              Auto-fill demo
+            </button>
+          </div>
+        </div>
+        <form onsubmit="handleLoginSubmit(event)" class="space-y-3.5">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
+              Email address
+            </label>
+            <div class="relative flex items-center">
+              <span class="absolute start-3.5 flex items-center pointer-events-none text-slate-400">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </span>
+              <input 
+                id="loginEmail"
+                required 
+                type="email" 
+                value="sarah.jenkins@lumikids.edu" 
+                placeholder="you@example.com"
+                class="w-full ps-10 pe-4 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 focus:outline-none transition shadow-sm"
+              >
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300">
+                Password
+              </label>
+              <a href="#" onclick="showToast('Password reset link sent to demo account.', 'info'); return false;" class="text-[11px] font-bold text-amber-500 hover:text-amber-600 hover:underline">
+                Forgot password?
+              </a>
+            </div>
+            <div class="relative flex items-center">
+              <span class="absolute start-3.5 flex items-center pointer-events-none text-slate-400">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </span>
+              <input 
+                id="loginPassword"
+                required 
+                type="password" 
+                value="lumi2026pass" 
+                placeholder="Enter your password"
+                class="w-full ps-10 pe-10 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 focus:outline-none transition shadow-sm"
+              >
+              <button 
+                type="button" 
+                onclick="togglePassword()" 
+                class="absolute end-3.5 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 focus:outline-none"
+                title="Show/Hide Password"
+              >
+                <svg id="eyeIcon" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex items-center pt-0.5">
+            <label class="flex items-center gap-2 cursor-pointer select-none">
+              <input type="checkbox" checked class="w-3.5 h-3.5 rounded text-amber-500 focus:ring-amber-400 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+              <span class="text-xs text-slate-600 dark:text-slate-400 font-medium">Remember my email</span>
+            </label>
+          </div>
+          <button 
+            type="submit" 
+            class="btn-primary w-full py-3 rounded-full text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 hover:shadow-xl hover:shadow-amber-500/30 transition-all cursor-pointer"
+          >
+            <span>Login to my account</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+        </form>
+        <div class="text-center text-xs text-slate-500 dark:text-slate-400 pt-1">
+          <span>New to LumiKids? </span>
+          <button 
+            type="button" 
+            onclick="switchAuthMode('signup')" 
+            class="font-extrabold text-amber-500 hover:text-amber-600 hover:underline cursor-pointer bg-transparent border-none p-0 inline"
+          >
+            Create an account
+          </button>
+        </div>
+      </div>
+      <div id="signupView" class="hidden space-y-4 transition-all duration-300">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-slate-900 dark:text-white">
+            Create <span class="text-amber-500">Parent</span> <span class="text-emerald-500">Account</span>
+          </h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            Join the LumiKids Portal to track your child's journey.
+          </p>
+        </div>
+        <form onsubmit="handleSignupSubmit(event)" class="space-y-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
+              Parent / Guardian Full Name
+            </label>
+            <div class="relative flex items-center">
+              <span class="absolute start-3.5 flex items-center pointer-events-none text-slate-400">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </span>
+              <input 
+                id="signupName"
+                required 
+                type="text" 
+                placeholder="e.g. Sarah Jenkins"
+                class="w-full ps-10 pe-4 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 focus:outline-none transition shadow-sm"
+              >
+            </div>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
+              Email address
+            </label>
+            <div class="relative flex items-center">
+              <span class="absolute start-3.5 flex items-center pointer-events-none text-slate-400">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </span>
+              <input 
+                id="signupEmail"
+                required 
+                type="email" 
+                placeholder="parent@example.com"
+                class="w-full ps-10 pe-4 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 focus:outline-none transition shadow-sm"
+              >
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div>
+              <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
+                Child's Name
+              </label>
+              <input 
+                id="signupChild"
+                required 
+                type="text" 
+                placeholder="e.g. Leo Jenkins"
+                class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 focus:outline-none transition shadow-sm"
+              >
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
+                Program Tier
+              </label>
+              <select 
+                id="signupTier"
+                class="w-full px-3 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 focus:outline-none transition shadow-sm"
+              >
+                <option value="Toddler Discoverers (1.5 - 3y)">Toddler (1.5 - 3y)</option>
+                <option value="Kindergarten Adventurers (3 - 5y)" selected>Kindergarten (3 - 5y)</option>
+                <option value="Primary Pioneers (Gr. 1 - 5)">Primary (Gr. 1 - 5)</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div>
+              <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
+                Password
+              </label>
+              <div class="relative flex items-center">
+                <input 
+                  id="signupPassword"
+                  required 
+                  type="password" 
+                  placeholder="Min. 8 characters"
+                  class="w-full ps-3.5 pe-8 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 focus:outline-none transition shadow-sm"
+                >
+                <button 
+                  type="button" 
+                  onclick="toggleSignupPassword('signupPassword', 'signupEye1')" 
+                  class="absolute end-2.5 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 focus:outline-none"
+                  title="Show/Hide Password"
+                >
+                  <svg id="signupEye1" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
+                Confirm
+              </label>
+              <div class="relative flex items-center">
+                <input 
+                  id="signupConfirmPassword"
+                  required 
+                  type="password" 
+                  placeholder="Repeat password"
+                  class="w-full ps-3.5 pe-8 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 focus:outline-none transition shadow-sm"
+                >
+                <button 
+                  type="button" 
+                  onclick="toggleSignupPassword('signupConfirmPassword', 'signupEye2')" 
+                  class="absolute end-2.5 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 focus:outline-none"
+                  title="Show/Hide Password"
+                >
+                  <svg id="signupEye2" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-start gap-2 pt-0.5">
+            <input id="agreeTerms" type="checkbox" required class="w-3.5 h-3.5 mt-0.5 rounded text-emerald-500 focus:ring-emerald-400 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+            <label for="agreeTerms" class="text-[11px] text-slate-600 dark:text-slate-400 font-medium cursor-pointer leading-tight select-none">
+              I agree to the LumiKids Child Safeguarding Policy &amp; Terms of Enrollment.
+            </label>
+          </div>
+          <button 
+            type="submit" 
+            class="btn-primary w-full py-3 rounded-full text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 hover:shadow-xl hover:shadow-amber-500/30 transition-all cursor-pointer"
+          >
+            <span>Create My Parent Account</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+        </form>
+        <div class="text-center text-xs text-slate-500 dark:text-slate-400 pt-1">
+          <span>Already have an account? </span>
+          <button 
+            type="button" 
+            onclick="switchAuthMode('login')" 
+            class="font-extrabold text-amber-500 hover:text-amber-600 hover:underline cursor-pointer bg-transparent border-none p-0 inline"
+          >
+            Login here
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <footer class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400 dark:text-slate-500 shrink-0">
+      <p>&copy; 2026 LumiKids. All rights reserved.</p>
+      
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-900 text-white dark:bg-slate-800 dark:text-slate-200 text-[10px] font-bold shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Powered by LumiKids SafeNet</span>
+      </div>
+    </footer>
+
+  </main>
+  <script src="main.js"></script>
+  <script>
+    function handleLoginSubmit(e) {
+      e.preventDefault();
+      showToast('Signing in as Sarah Jenkins...', 'success');
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 500);
+    }
+
+    function handleSignupSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('signupName').value;
+      const pwd = document.getElementById('signupPassword').value;
+      const confirmPwd = document.getElementById('signupConfirmPassword').value;
+      
+      if (pwd !== confirmPwd) {
+        showToast('Passwords do not match. Please verify.', 'error');
+        return;
+      }
+      
+      showToast(`Welcome ${name}! Your Parent Portal account has been created.`, 'success');
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 1000);
+    }
+
+    function switchAuthMode(mode) {
+      const loginView = document.getElementById('loginView');
+      const signupView = document.getElementById('signupView');
+      if (mode === 'signup') {
+        loginView.classList.add('hidden');
+        signupView.classList.remove('hidden');
+        window.location.hash = 'signup';
+      } else {
+        signupView.classList.add('hidden');
+        loginView.classList.remove('hidden');
+        window.location.hash = 'login';
+      }
+    }
+
+    function togglePassword() {
+      const pwdInput = document.getElementById('loginPassword');
+      const eyeIcon = document.getElementById('eyeIcon');
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        eyeIcon.innerHTML = `<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/>`;
+      } else {
+        pwdInput.type = 'password';
+        eyeIcon.innerHTML = `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>`;
+      }
+    }
+
+    function toggleSignupPassword(inputId, iconId) {
+      const pwdInput = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (!pwdInput || !icon) return;
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        icon.innerHTML = `<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/>`;
+      } else {
+        pwdInput.type = 'password';
+        icon.innerHTML = `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>`;
+      }
+    }
+
+    function fillDemoCreds() {
+      document.getElementById('loginEmail').value = 'sarah.jenkins@lumikids.edu';
+      document.getElementById('loginPassword').value = 'lumi2026pass';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.location.hash === '#signup' || window.location.search.includes('signup')) {
+        switchAuthMode('signup');
+      }
+    });
+  </script>
+</body>
+</html>
